@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.example.shivendra.coeus.Model.Blog;
 import com.example.shivendra.coeus.R;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -103,19 +104,26 @@ public class AddPostActivity extends AppCompatActivity {
         if(!TextUtils.isEmpty(titleval) && !TextUtils.isEmpty(descval) && mImageUri!= null){
             //Time to upload!!
 
-            StorageReference filepath = mStorage.child("BlogImages").child(mImageUri.getLastPathSegment());
+            final StorageReference filepath = mStorage.child("BlogImages").child(mImageUri.getLastPathSegment());
+
             filepath.putFile(mImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                    Uri downloadurl = taskSnapshot.getUploadSessionUri();
+                    //Uri downloadurl = taskSnapshot.getUploadSessionUri();
+
+                    Task<Uri> urlTask = taskSnapshot.getStorage().getDownloadUrl();
+                    while (!urlTask.isSuccessful());
+                    Uri downloadUrl = urlTask.getResult();
+
+
 
                     DatabaseReference newPost = mPostDatabase.push();
 
                     Map<String,String> dataToSave = new HashMap<>();
                     dataToSave.put("title",titleval);
                     dataToSave.put("desc",descval);
-                    dataToSave.put("image",downloadurl.toString());
+                    dataToSave.put("image",downloadUrl.toString());
                     dataToSave.put("userid",mUser.getUid());
                     dataToSave.put("timestamp", String.valueOf(System.currentTimeMillis()));
 
