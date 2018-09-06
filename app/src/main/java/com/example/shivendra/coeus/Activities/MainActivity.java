@@ -1,4 +1,4 @@
-package com.example.shivendra.coeus;
+package com.example.shivendra.coeus.Activities;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.shivendra.coeus.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 mUser = firebaseAuth.getCurrentUser();
                 if(mUser != null){
                     Toast.makeText(MainActivity.this,"Signed In",Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(MainActivity.this,PostactivityList.class));
                 }else {
                     Toast.makeText(MainActivity.this,"Not signed In",Toast.LENGTH_LONG).show();
                 }

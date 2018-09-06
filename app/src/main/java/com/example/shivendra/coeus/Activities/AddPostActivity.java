@@ -1,7 +1,9 @@
-package com.example.shivendra.coeus;
+package com.example.shivendra.coeus.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.shivendra.coeus.R;
 
 public class AddPostActivity extends AppCompatActivity {
 

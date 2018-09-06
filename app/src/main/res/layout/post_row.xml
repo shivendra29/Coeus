@@ -11,12 +11,13 @@
 
         <ImageButton
             android:id="@+id/post_imageList"
-            android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
-            android:cropToPadding="false"
-            android:src="@mipmap/baseline_add_photo_alternate_black_48"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="347dp"
+            android:adjustViewBounds="true"
+            android:background="#ffffff"
+            android:cropToPadding="false"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/baseline_add_photo_alternate_black_48" />
         
         <TextView
             android:id="@+id/post_titleList"
