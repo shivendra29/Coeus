@@ -57,6 +57,14 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
+        signuputton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,SignupActivity.class));
+                finish();
+            }
+        });
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
