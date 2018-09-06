@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.Layout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.shivendra.coeus.Model.Blog;
 import com.example.shivendra.coeus.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.Date;
 import java.util.List;
@@ -20,6 +22,8 @@ public class BlogRecyclerAdapter extends RecyclerView.Adapter<BlogRecyclerAdapte
 
     private Context context;
     private List<Blog> blogList;
+
+
 
     public BlogRecyclerAdapter(Context context, List<Blog> blogList) {
         this.context = context;
@@ -36,7 +40,7 @@ public class BlogRecyclerAdapter extends RecyclerView.Adapter<BlogRecyclerAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BlogRecyclerAdapter.ViewHolder viewHolder, int position) {
+    public void onBindViewHolder(ViewHolder viewHolder, int position) {
 
         Blog blog = blogList.get(position);
         String imageUrl = null;
@@ -52,6 +56,9 @@ public class BlogRecyclerAdapter extends RecyclerView.Adapter<BlogRecyclerAdapte
 
         imageUrl = blog.getImage();
 
+        Log.d("CHECK ERROR",imageUrl);
+
+        Picasso.with(context).load(imageUrl).error(R.drawable.some).into(viewHolder.image);
     }
 
     @Override
