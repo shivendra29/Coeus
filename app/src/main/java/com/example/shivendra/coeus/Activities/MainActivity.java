@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(new Intent(MainActivity.this,PostactivityList.class));
                     finish();
                 }else {
-                    Toast.makeText(MainActivity.this,"Not signed In",Toast.LENGTH_LONG).show();
+                    //Toast.makeText(MainActivity.this,"Not signed In",Toast.LENGTH_LONG).show();
                 }
 
             }
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }else {
 
-
+                    Toast.makeText(MainActivity.this,"Field can't be empty ",Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
                     finish();
 
                 }else {
-                    //Not signed in
+                    Toast.makeText(MainActivity.this,"Error Logging In",Toast.LENGTH_LONG).show();
                 }
             }
         });

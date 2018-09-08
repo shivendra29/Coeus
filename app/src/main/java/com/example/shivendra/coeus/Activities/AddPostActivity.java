@@ -141,4 +141,12 @@ public class AddPostActivity extends AppCompatActivity {
     }
 }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        Intent intent = new Intent(AddPostActivity.this,PostactivityList.class);
+        startActivity(intent);
+        finish();
+    }
 }

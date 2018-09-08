@@ -58,7 +58,7 @@ public class BlogRecyclerAdapter extends RecyclerView.Adapter<BlogRecyclerAdapte
 
         Log.d("CHECK ERROR",imageUrl);
 
-        Picasso.with(context).load(imageUrl).error(R.drawable.some).into(viewHolder.image);
+        Picasso.with(context).load(imageUrl).error(R.drawable.some)  .into(viewHolder.image);
 
 
     }

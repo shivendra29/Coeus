@@ -1,67 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:fillViewport="true">
+
+
+
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.AddPostActivity">
+    tools:context=".Activities.AddPostActivity"
+    android:background="#ffffff">
 
     <ImageButton
         android:id="@+id/Post_Image"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="284dp"
         android:layout_marginEnd="5dp"
         android:layout_marginStart="6dp"
-        android:scaleType="fitCenter"
-        android:background="#ffffff"
         android:layout_marginTop="16dp"
+        android:background="#ffffff"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/baseline_add_photo_alternate_black_48" />
+        app:layout_constraintVertical_bias="0.25"
+        app:srcCompat="@drawable/baseline_add_photo_alternate_black_48" />
 
     <EditText
         android:id="@+id/Post_Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/input_outline"
-        android:padding="15dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:hint="Post Title"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/input_outline"
         android:ems="10"
+        android:hint="Post Title"
         android:inputType="textPersonName"
-        android:text=""
+        android:padding="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Post_Image"
-        app:layout_constraintVertical_bias="0.031" />
+        app:layout_constraintVertical_bias="0.264" />
 
     <EditText
         android:id="@+id/Post_Description"
-        android:background="@drawable/input_outline"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/input_outline"
         android:ems="10"
-        android:padding="15dp"
         android:hint="Description"
         android:inputType="textMultiLine"
+        android:padding="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Post_Title"
-        app:layout_constraintVertical_bias="0.037" />
+        app:layout_constraintVertical_bias="0.051" />
 
     <Button
         android:id="@+id/Post_Submit"
@@ -72,6 +83,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Submit"
+        style="?android:attr/borderlessButtonStyle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -79,3 +91,5 @@
         app:layout_constraintVertical_bias="0.903" />
 
 </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

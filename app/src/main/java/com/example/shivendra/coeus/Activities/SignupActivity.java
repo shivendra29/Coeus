@@ -13,6 +13,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.shivendra.coeus.R;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -115,7 +116,13 @@ public class SignupActivity extends AppCompatActivity {
 
                                 currentDB.child("firstname").setValue(name);
                                 currentDB.child("lastname").setValue(lname);
-                                currentDB.child("image").setValue(resultUri.toString());
+                                //currentDB.child("image").setValue(resultUri.toString());
+
+                                if(resultUri != null){
+                                    currentDB.child("image").setValue(resultUri.toString());
+                                }else{
+                                    currentDB.child("image").setValue("none");
+                                }
 
                                 mProgressDialog.dismiss();
 
@@ -142,6 +149,9 @@ public class SignupActivity extends AppCompatActivity {
                     }
                 }
             });
+        }
+        else{
+            Toast.makeText(SignupActivity.this,"Field can't be empty ",Toast.LENGTH_SHORT).show();
         }
 
     }
